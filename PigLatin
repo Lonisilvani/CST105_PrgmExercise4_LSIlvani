@@ -1,0 +1,53 @@
+# CST105_PrgmExercise4_LSIlvani
+/*Progam is used to translate words into PigLatin
+Loni Silvani
+CST-105
+Lisa Hebert
+March 11, 2018
+ */ 
+import java.util.*; // imports java utility package
+
+public class PigLatin {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in); 
+        //creates system user input
+        
+        // Intructs the user tp input a word to be translated
+        System.out.println("Enter a word to be translated into PigLatin!.");
+        
+        
+        // Prompts the user to input a string
+        String english1 = input.next(); // reads and stores the users 1st input
+        
+        english1 = english1.toUpperCase(); // converts user input to CAPS
+        
+        System.out.println();// blank line
+        
+        // Translates  word by checking for vowels and splitting the word where the first vowel is found
+        if (english1.indexOf('A') == 0 || english1.indexOf('E') == 0 
+                || english1.indexOf('I') == 0 || english1.indexOf('O') == 0 
+                || english1.indexOf('U') == 0) {   
+            System.out.printf(english1 + "\t" + english1 + "AY"); 
+// if word starts with vowel program will just add AY to the end
+        }
+        else if (english1.charAt(1) != 'A' && english1.charAt(1) != 'E' 
+// checks if there is a consonant in the second letter spot
+                && english1.charAt(1) != 'I' && english1.charAt(1) != 'O' 
+                && english1.charAt(1) != 'U' && english1.charAt(1) != 'Y') 
+            if (english1.charAt(2) != 'A' && english1.charAt(2) != 'E' 
+                && english1.charAt(2) != 'I' && english1.charAt(2) != 'O' 
+                && english1.charAt(2) != 'U' && english1.charAt(2) != 'Y') {
+                System.out.printf(english1 + "\t" + english1.substring(3) + english1.substring(0, 3) 
+                    + "AY");
+                            
+            }
+            else // prints the else if outcome    
+            System.out.printf(english1 + "\t" + english1.substring(2) + english1.substring(0, 2) 
+                    + "AY");
+        
+        else // if only the first letter is a consonant
+            System.out.printf(english1 + "\t" + english1.substring(1) + english1.charAt(0) + "AY");
+            
+        
+    }
+}
